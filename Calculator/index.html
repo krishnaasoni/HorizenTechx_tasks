@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLASSIC • Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="bg-grid "></div>
+    <div class="bg-stars "></div>
+    <div class="blob blob-1 "></div>
+    <div class="blob blob-2 "></div>
+    <div class="blob blob-3"></div>
+    <div class="scanline "></div>
+
+    <main class="stage  ">
+        <div class="theme-switcher  ">
+            <button class="theme-dot t-cyan active" data-theme="cyan" aria-label="Cyan"></button>
+            <button class="theme-dot t-magenta" data-theme="magenta" aria-label="Magenta"></button>
+            <button class="theme-dot t-green" data-theme="green" aria-label="Green"></button>
+            <button class="theme-dot t-gold" data-theme="gold" aria-label="Gold"></button>
+        </div>
+
+        <section class="calculator  ">
+            <header class="calc-header ">
+                <div class="brand ">
+                    <span class="dot "></span>
+                    <h1>CLASSIC<span>CALC</span></h1>
+                </div>
+                <div class="mode-toggle  ">
+                    <button id="sciToggle" class="chip">SCI</button>
+                    <button id="historyToggle" class="chip">LOG</button>
+                    <button id="voiceBtn" class="chip mic" title="Speak: e.g. five plus three">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                            <path
+                                d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                        </svg>
+                        MIC
+                    </button>
+                </div>
+            </header>
+
+            <div class="display ">
+                <div class="expression " id="expression">0</div>
+                <div class="result" id="result">&nbsp;</div>
+            </div>
+
+            <div class="sci-row " id="sciRow">
+                <button class="key sci" data-action="fn" data-fn="sin">sin</button>
+                <button class="key sci" data-action="fn" data-fn="cos">cos</button>
+                <button class="key sci" data-action="fn" data-fn="tan">tan</button>
+                <button class="key sci" data-action="fn" data-fn="log">log</button>
+                <button class="key sci" data-action="fn" data-fn="ln">ln</button>
+                <button class="key sci" data-action="fn" data-fn="sqrt">√</button>
+                <button class="key sci" data-action="ins" data-val="**">x^y</button>
+                <button class="key sci" data-action="ins" data-val="pi">π</button>
+                <button class="key sci" data-action="ins" data-val="e">e</button>
+                <button class="key sci" data-action="fact">x!</button>
+            </div>
+
+            <div class="keys ">
+                <button class="key util" data-action="clear">AC</button>
+                <button class="key util" data-action="back">⌫</button>
+                <button class="key util" data-action="ins" data-val="%">%</button>
+                <button class="key op" data-action="ins" data-val="/">÷</button>
+
+                <button class="key" data-action="ins" data-val="7">7</button>
+                <button class="key" data-action="ins" data-val="8">8</button>
+                <button class="key" data-action="ins" data-val="9">9</button>
+                <button class="key op" data-action="ins" data-val="*">×</button>
+
+                <button class="key" data-action="ins" data-val="4">4</button>
+                <button class="key" data-action="ins" data-val="5">5</button>
+                <button class="key" data-action="ins" data-val="6">6</button>
+                <button class="key op" data-action="ins" data-val="-">−</button>
+
+                <button class="key" data-action="ins" data-val="1">1</button>
+                <button class="key" data-action="ins" data-val="2">2</button>
+                <button class="key" data-action="ins" data-val="3">3</button>
+                <button class="key op" data-action="ins" data-val="+">+</button>
+
+                <button class="key" data-action="ins" data-val="(">(</button>
+                <button class="key" data-action="ins" data-val="0">0</button>
+                <button class="key" data-action="ins" data-val=".">.</button>
+                <button class="key eq" data-action="equals">=</button>
+            </div>
+
+            <aside class="history-panel" id="historyPanel">
+                <div class="history-head">
+                    <span>HISTORY</span>
+                    <button id="clearHist" class="mini">clear</button>
+                </div>
+                <ul id="historyList"></ul>
+            </aside>
+        </section>
+
+        <p class="hint">Tip — Press <kbd>MIC</kbd> and say <em>"five plus three"</em>. Keyboard works too.</p>
+    </main>
+
+    <canvas id="fx"></canvas>
+    <script src="script.js"></script>
+</body>
+
+</html>
