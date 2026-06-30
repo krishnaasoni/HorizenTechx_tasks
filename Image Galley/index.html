@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Style Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Image Gallery</h1>
+            <p>Discover Beautiful Images</p>
+        </div>
+
+        <div class="controls">
+            <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+            <button class="filter-btn" onclick="filterGallery('nature')">🌿 Nature</button>
+            <button class="filter-btn" onclick="filterGallery('car')">🚗 Cars</button>
+            <button class="filter-btn" onclick="filterGallery('travel')">✈️ Travel</button>
+        </div>
+
+        <div class="stats">
+            <span id="image-count">Showing all 26 images</span>
+        </div>
+
+        <div class="masonry" id="gallery">
+            <!-- Images will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">✕</button>
+        <div class="lightbox-content">
+            <button class="lightbox-btn prev-btn" onclick="prevImage()">&#10094;</button>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Lightbox Image">
+            <button class="lightbox-btn next-btn" onclick="nextImage()">&#10095;</button>
+        </div>
+        <div class="image-counter">
+            <span id="current-index">1</span> / <span id="total-images">26</span>
+        </div>
+    </div>
+
+    <script src="images.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
